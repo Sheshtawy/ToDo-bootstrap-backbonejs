@@ -27,11 +27,12 @@ var app = app || {};
       this.$input = this.$('.edit');
       this.$el.toggleClass( 'completed', this.model.get('completed') ); 
       this.toggleVisible();
-      var nw = moment("MM-DD-YYYY");
-      if(moment.duration(nw - this.model.get('dueDate') ).asMinutes() < 10){
+      var nw = moment();
+      var deb = new moment(this.model.get('dueDate'));
+      var def = moment.duration(Math.abs(nw - deb)).asMinutes();
+      if( def < 10){
          this.$el.addClass('list-group-item-danger');
-       } 
-                                            
+       }                                       
 
       return this;
     },
