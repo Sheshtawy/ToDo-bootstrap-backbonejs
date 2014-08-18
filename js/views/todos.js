@@ -29,7 +29,7 @@ var app = app || {};
       this.toggleVisible();
       var nw = moment();
       var deb = new moment(this.model.get('dueDate'));
-      var def = moment.duration(Math.abs(nw - deb).asMinutes());
+      var def = moment.duration(Math.abs(nw - deb)).asMinutes();
       if( def/1000 < 10){
          this.$el.addClass('list-group-item-danger');
        }                                       
