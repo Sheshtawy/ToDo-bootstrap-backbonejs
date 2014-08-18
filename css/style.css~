@@ -1,0 +1,70 @@
+.media-object {
+width: 100px;
+
+}
+
+#todo-list li.editing .view {
+	display: none;
+}
+
+#new-todo,
+.edit {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	font-size: 18px;
+	font-family: inherit;
+	line-height: 1.4em;
+	border: 0;
+	outline: none;
+	color: inherit;
+	padding: 6px;
+	border: 1px solid #999;
+	
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+.hidden {
+	display: none;
+}
+
+#todo-list li.editing .edit {
+	display: block;
+	width: 506px;
+	padding: 5px;
+	
+}
+
+#todo-list li .edit {
+	display: none;
+}
+
+#todo-list li.completed label {
+	color: #a9a9a9;
+	text-decoration: line-through;
+}
+
+li label {
+font-size: 20px;
+}
+
+.btn-warning {
+margin-bottom: 10px;
+}
+
+ul {
+padding-left: inherit;
+}
+
+.media {
+margin-left: 44%;
+margin-top: 5px;
+}
+
+.media:first-child {
+margin-top: 7px;
+}
