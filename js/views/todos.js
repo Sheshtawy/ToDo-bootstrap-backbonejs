@@ -30,7 +30,7 @@ var app = app || {};
       var nw = moment();
       var deb = new moment(this.model.get('dueDate'));
       var def = moment.duration(Math.abs(nw - deb)).asMinutes();
-      if( def/1000 < 10){
+      if( def< 10){
          this.$el.addClass('list-group-item-danger');
        }                                       
 
