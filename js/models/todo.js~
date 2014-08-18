@@ -1,7 +1,20 @@
-app.models.ToDo = Backbone.Model.extend({
+var app = app || {};
+
+ app.Todo = Backbone.Model.extend({
+
+
     defaults: {
-        title: "ToDo",
-        archived: false,
-        done: false
+      title: '',
+      completed: false,
+      dueDate: moment("Mar 26th, 2020", "MMM-DD-YYYY")
+
+    },
+
+
+    toggle: function() {
+      this.save({
+        completed: !this.get('completed')
+      });
     }
-});
+
+  });

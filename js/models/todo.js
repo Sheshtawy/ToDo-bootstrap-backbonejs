@@ -5,7 +5,9 @@ var app = app || {};
 
     defaults: {
       title: '',
-      completed: false
+      completed: false,
+      dueDate: moment("12-25-2020", "MM-DD-YYYY")
+
     },
 
 

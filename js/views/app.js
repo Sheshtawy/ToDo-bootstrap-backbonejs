@@ -8,6 +8,7 @@ var app = app || {};
 
     events: {
       'keypress #new-todo': 'createOnEnter',
+      'keypress #duePicker': 'createOnEnter',   
       'click #clear-completed': 'clearCompleted',
       'click #toggle-all': 'toggleAllComplete'
     },
@@ -17,13 +18,14 @@ var app = app || {};
       this.$input = this.$('#new-todo');
       this.$footer = this.$('#footer');
       this.$main = this.$('#main');
-
+      this.$duePicker = this.$('#duePicker');
       this.listenTo(app.Todos, 'add', this.addOne);
       this.listenTo(app.Todos, 'reset', this.addAll);
 
       this.listenTo(app.Todos, 'change:completed', this.filterOne);
       this.listenTo(app.Todos,'filter', this.filterAll);
       this.listenTo(app.Todos, 'all', this.render);
+      
 
       app.Todos.fetch();
     },
@@ -35,6 +37,7 @@ var app = app || {};
       if ( app.Todos.length ) {
         this.$main.show();
         this.$footer.show();
+        
 
         this.$footer.html(this.statsTemplate({
           completed: completed,
@@ -76,7 +79,8 @@ var app = app || {};
       return {
         title: this.$input.val().trim(),
         order: app.Todos.nextOrder(),
-        completed: false
+        completed: false,
+        dueDate: moment(this.$duePicker.val().trim(), "MM-DD-YYYY")
       };
     },
 
