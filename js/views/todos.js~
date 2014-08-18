@@ -3,7 +3,7 @@ var app = app || {};
   app.TodoView = Backbone.View.extend({
 
     tagName: 'li',
-    className: "list-group-item h4" ,
+    className: "list-group-item" ,
 
     template: _.template( $('#item-template').html() ),
 
@@ -25,7 +25,8 @@ var app = app || {};
       this.$el.html( this.template( this.model.attributes ) );
       this.$input = this.$('.edit');
       this.$el.toggleClass( 'completed', this.model.get('completed') ); 
-      this.toggleVisible();                                             
+      this.toggleVisible();
+                                            
 
       return this;
     },

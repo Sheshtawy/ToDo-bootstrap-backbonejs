@@ -18,14 +18,20 @@ var app = app || {};
     initialize: function() {
       this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'destroy', this.remove);       
-      this.listenTo(this.model, 'visible', this.toggleVisible); 
+      this.listenTo(this.model, 'visible', this.toggleVisible);
+      
     },
 
     render: function() {
       this.$el.html( this.template( this.model.attributes ) );
       this.$input = this.$('.edit');
       this.$el.toggleClass( 'completed', this.model.get('completed') ); 
-      this.toggleVisible();                                             
+      this.toggleVisible();
+      var nw = moment("MM-DD-YYYY");
+      if(moment.duration(nw - this.model.get('dueDate') ).asMinutes() < 10){
+         this.$el.addClass('list-group-item-danger');
+       } 
+                                            
 
       return this;
     },
