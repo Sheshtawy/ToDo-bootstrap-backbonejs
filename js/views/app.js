@@ -80,7 +80,7 @@ var app = app || {};
         title: this.$input.val().trim(),
         order: app.Todos.nextOrder(),
         completed: false,
-        dueDate: moment(this.$duePicker.val().trim(), "MM-DD-YYYY")
+        dueDate: moment(this.$duePicker.val().trim(), "MM-DD-YYYY HH:mm")
       };
     },
 
