@@ -61,8 +61,8 @@ padding-left: inherit;
 }
 
 .media {
-margin-left: 45%;
-margin-top: 5px;
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* 
 }
 
 .media:first-child {
