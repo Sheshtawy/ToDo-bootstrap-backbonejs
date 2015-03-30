@@ -62,7 +62,8 @@ padding-left: inherit;
 
 .media {
     text-align: center;  /* align the inline(-block) elements horizontally */
-    font: 0/0 a;         /* 
+    font: 0/0 a;   
+    margin-top: 8 px;/* 
 }
 
 .media:first-child {
